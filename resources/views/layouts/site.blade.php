@@ -14,6 +14,8 @@
 
     <meta name="theme-color" content="#7952b3">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -38,21 +40,29 @@
     <div class="container">
       <header>
         <div class="d-flex flex-column flex-md-row align-items-center border-bottom">
-          <a href="/" class="d-flex align-items-center pt-2 pb-2 text-dark text-decoration-none">
+          <a href="{{ url('/') }}" class="d-flex align-items-center pt-2 pb-2 text-dark text-decoration-none">
             <span class="fs-4">Hosting</span>
           </a>
 
           <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-            <a class="me-3 py-2 text-dark text-decoration-none" href="#">Features</a>
-            <a class="me-3 py-2 text-dark text-decoration-none" href="#">Enterprise</a>
-            <a class="me-3 py-2 text-dark text-decoration-none" href="#">Support</a>
-            <a class="py-2 text-dark text-decoration-none" href="#">Pricing</a>
+            <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('about') }}">About</a>
+            <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('domains') }}">Domains</a>
+            <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('pricing') }}">Pricing</a>
+            <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('faq') }}">FAQ</a>
+            <a class="py-2 btn btn-primary" href="#">Login</a>
           </nav>
         </div>
       </header>
     </div>
     
-    @yield('content')
+    <main>
+      @yield('content')
+        <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      </footer>
+    </main>
 
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
