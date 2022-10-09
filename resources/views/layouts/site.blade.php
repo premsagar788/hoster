@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Carousel Template · Bootstrap v5.0</title>
+    <title>@yield('title')</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
 
@@ -40,7 +40,7 @@
     <div class="container">
       <header>
         <div class="d-flex flex-column flex-md-row align-items-center border-bottom">
-          <a href="{{ url('/') }}" class="d-flex align-items-center pt-2 pb-2 text-dark text-decoration-none">
+          <a href="{{ url('/') }}" class="d-flex align-items-center pt-3 pb-3 text-dark text-decoration-none">
             <span class="fs-4">Hosting</span>
           </a>
 
