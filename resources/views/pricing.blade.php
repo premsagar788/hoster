@@ -1,5 +1,7 @@
 @extends('layouts.site')
 
+@section('title', 'Pricing')
+
 @section('content')
 
 <div class="container">
