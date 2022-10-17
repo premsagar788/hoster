@@ -11,18 +11,25 @@ class DomainsController extends Controller
         return view('domains');
     }
     // dns_get_record
+
     public function check(Request $request)
     {
         $domain = $request->input('domain');
-        $response = '';
 
+        if(!$domain) {
+            return redirect()->back()->withErrors('No domain entered');
+        }
         if (gethostbyname($domain) != $domain ) {
-            $response = "Domain is already registered";
+            $status = 'Unavailable';
         }
         else {
-            $response = "Domain is available";
+            $status = 'Available';
         }
-        // dd($response);
-        return redirect('domains')->with('response', $response);
+        return view('domains')->with(compact('status', 'domain'));
+    }
+
+    public function whois($domain)
+    {
+        dd($domain);
     }
 }

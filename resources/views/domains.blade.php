@@ -7,15 +7,30 @@
   <div class="jumbotron">
     <div class="container">
       <h1>Find the perfect domain!</h1>
-      <form action="{{ url('/domain') }}" method="post">
+
+      @if ($errors->any())
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+      @endif
+
+      <form action="{{ url('/domains') }}" method="post">
         @csrf
         <div class="col col-lg-4 col-md-6 col-sm-12 mb-3">
           <input type="text" name="domain" class="form-control col col-lg-4" placeholder="Enter your preferred domain name">
         </div>
         <input type="submit" name="submit" value="Check »" class="btn btn-primary btn-lg">
       </form>
-      @if(isset($response))
-      <p><b>{{ $response }}</b></p>
+      @if(isset($status))
+        @if($status == 'Unavailable')
+          Domain is already registered! <a href="{{ url('whois/'.$domain) }}" class="btn btn-danger">Check Whois information!</a>
+        @else
+          Domain is available! <a href="{{ url('register-domain') }}" class="btn btn-success">Register now!</a>
+        @endif
       @endif
     </div>
   </div>
