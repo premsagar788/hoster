@@ -30,10 +30,10 @@ Route::get('/pricing', function(){
 	return view('pricing');
 });
 
-Route::get('/domains', function(){
-	return view('domains');
-});
+Route::get('/domains', [App\Http\Controllers\DomainsController::class, 'index'])->name('domains');;
 
 Route::get('/faq', function(){
 	return view('faq');
 });
+
+Route::post('/domain', [App\Http\Controllers\DomainsController::class, 'check']);

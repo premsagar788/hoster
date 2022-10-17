@@ -7,8 +7,23 @@
   <div class="jumbotron">
     <div class="container">
       <h1>Find the perfect domain!</h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+      <form action="{{ url('/domain') }}" method="post">
+        @csrf
+        <div class="col col-lg-4 col-md-6 col-sm-12 mb-3">
+          <input type="text" name="domain" class="form-control col col-lg-4" placeholder="Enter your preferred domain name">
+        </div>
+        <input type="submit" name="submit" value="Check »" class="btn btn-primary btn-lg">
+      </form>
+      @if(isset($response))
+      <p><b>{{ $response }}</b></p>
+      @endif
+    </div>
+  </div>
+
+  
+  <div class="row">
+    <div class="col col-lg-12 col-sm-12 col-md-12">
+
     </div>
   </div>
 
