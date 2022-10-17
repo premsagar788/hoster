@@ -30,10 +30,13 @@ Route::get('/pricing', function(){
 	return view('pricing');
 });
 
-Route::get('/domains', function(){
-	return view('domains');
+Route::controller(App\Http\Controllers\DomainsController::class)->group(function () {
+    Route::get('/domains', 'index');
+    Route::post('/domains', 'check');
+    Route::get('/whois/{domain}', 'whois');
 });
 
 Route::get('/faq', function(){
 	return view('faq');
 });
+
