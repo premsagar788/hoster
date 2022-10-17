@@ -58,10 +58,13 @@
     <main>
       @yield('content')
         <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-      </footer>
+        <section class="footer-section">
+          <footer class="container">
+            <p class="float-end"><a href="#">Back to top</a></p>
+            <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+          </footer>
+        </section>
+      
     </main>
 
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

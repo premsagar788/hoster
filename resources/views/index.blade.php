@@ -62,28 +62,25 @@
 
     <!-- Three columns of text below the carousel -->
     <div class="row">
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-        <h2>Heading</h2>
-        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-        <p><a class="btn btn-secondary" href="#">View details »</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-        <h2>Heading</h2>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-        <p><a class="btn btn-secondary" href="#">View details »</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-        <h2>Heading</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-        <p><a class="btn btn-secondary" href="#">View details »</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
+        <div class="col-lg-4">
+          <i class="fa fa-cloud fa-5x"></i>
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p><a class="btn btn-dark" href="#" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <i class="fa fa-server fa-5x"></i>
+          <h2>Heading</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <p><a class="btn btn-dark" href="#" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <i class="fa fa-globe fa-5x"></i>
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-dark" href="#" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
 
 
     <!-- START THE FEATURETTES -->
