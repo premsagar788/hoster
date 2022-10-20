@@ -105,11 +105,6 @@ i.fa {
     padding: 10px;
 }
 
-footer.container{
-  /*background: grey;*/
-  
-}
-
 section.footer-section {
   margin-top: 1rem;
   background: #472f7c42;
@@ -126,6 +121,7 @@ section.footer-section {
     background-color: #eee; /* For browsers that do not support gradients */
     background-image: linear-gradient(to right, #3502ff2b , #2aff003d);
 }
+
 .carousel-caption-first-slide {
   bottom: 5rem !important;
   z-index: 10;
