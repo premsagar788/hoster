@@ -126,3 +126,22 @@ section.footer-section {
     background-color: #eee; /* For browsers that do not support gradients */
     background-image: linear-gradient(to right, #3502ff2b , #2aff003d);
 }
+
+.carousel-caption-first-slide {
+  bottom: 5rem !important;
+  z-index: 10;
+  position: absolute;
+  right: 15%;
+  left: 15%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+}
+
+.cart-count {
+  background: red;
+  color: white;
+  vertical-align: -webkit-baseline-middle;
+  padding: 0px 5px 0px 5px;
+}

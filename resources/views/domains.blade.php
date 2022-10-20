@@ -21,15 +21,15 @@
       <form action="{{ url('/domains') }}" method="post">
         @csrf
         <div class="col col-lg-4 col-md-6 col-sm-12 mb-3">
-          <input type="text" name="domain" class="form-control col col-lg-4" placeholder="Enter your preferred domain name">
+          <input type="text" name="domain" class="form-control col col-lg-4" placeholder="Enter your preferred domain name" @if(isset($domain)) value="{{ $domain }}" @endif>
         </div>
-        <input type="submit" name="submit" value="Check »" class="btn btn-primary btn-lg">
+        <input type="submit" name="submit" value="Check »" class="btn btn-primary btn-lg" >
       </form>
       @if(isset($status))
         @if($status == 'Unavailable')
           Domain is already registered! <a href="{{ url('whois/'.$domain) }}" class="btn btn-danger">Check Whois information!</a>
         @else
-          Domain is available! <a href="{{ url('register-domain') }}" class="btn btn-success">Register now!</a>
+          Domain is available! <a href="{{ url('add-to-cart/'. $domain) }}" class="btn btn-success">Add to cart</a>
         @endif
       @endif
     </div>
