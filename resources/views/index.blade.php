@@ -1,5 +1,7 @@
 @extends('layouts.site')
 
+@section('title', 'Home - Web hosting & Domain')
+
 @section('content')
 
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -14,9 +16,15 @@
 
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p>Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            <h1>Find your perfect domain</h1>
+            <p>Enter your domain name & start your business today!</p>
+            <form action="{{ url('/domains') }}" method="post">
+              @csrf
+              <div class="col col-lg-4 col-md-6 col-sm-12 mb-3">
+                <input type="text" name="domain" class="form-control col col-lg-4" placeholder="Enter your preferred domain name">
+              </div>
+              <input type="submit" name="submit" value="Check »" class="btn btn-primary btn-lg">
+            </form>
           </div>
         </div>
       </div>

@@ -117,3 +117,12 @@ section.footer-section {
   padding-bottom: 10px;
   box-shadow: 1px 5px 11px 3px #6b00ff87;
 }
+
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #eee; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, #3502ff2b , #2aff003d);
+}
