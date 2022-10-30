@@ -140,3 +140,8 @@ section.footer-section {
   vertical-align: -webkit-baseline-middle;
   padding: 0px 5px 0px 5px;
 }
+
+.carousel-item {
+  background: url('/images/hosting-banner.jpg');
+  background-size: 100% 100%;
+}
