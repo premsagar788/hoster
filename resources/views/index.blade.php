@@ -1,5 +1,7 @@
 @extends('layouts.site')
 
+@section('title', 'Home')
+
 @section('content')
 
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
