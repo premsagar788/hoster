@@ -12,7 +12,6 @@
 </div>
 
 <div class="container">
-  
   <main>
     <div class="row row-cols-1 row-cols-md-4 mb-4 text-center">
       <div class="col">
