@@ -22,6 +22,8 @@ Route::get('/', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/cart', [App\Http\Controllers\FrontendController::class, 'cart']);
+
 Route::get('/about', function(){
 	return view('about');
 });
