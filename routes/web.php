@@ -22,6 +22,8 @@ Route::get('/', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/cart', [App\Http\Controllers\FrontendController::class, 'cart']);
+
 Route::get('/about', function(){
 	return view('about');
 });
@@ -34,6 +36,7 @@ Route::controller(App\Http\Controllers\DomainsController::class)->group(function
     Route::get('/domains', 'index');
     Route::post('/domains', 'check');
     Route::get('/whois/{domain}', 'whois');
+    Route::get('/add-to-cart/{product}', 'addToCart');
 });
 
 Route::get('/faq', function(){

@@ -4,7 +4,7 @@
 
 body {
   /*padding-top: 3rem;*/
-  padding-bottom: 3rem;
+  padding-bottom: 0rem;
   color: #5a5a5a;
 }
 
@@ -58,7 +58,7 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 1rem 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -88,19 +88,75 @@ body {
 
 @media (min-width: 62em) {
   .featurette-heading {
-    margin-top: 7rem;
+    margin-top: 1rem;
   }
 }
 
 .jumbotron {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-bottom: 30px;
-    color: inherit;
-    background-color: #eee;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: #eee;
 }
 
 i.fa {
-    border: 1px solid #00000012;
-    padding: 10px;
+  padding: 10px;
+}
+
+section.footer-section {
+  margin-top: 1rem;
+  background: #472f7c42;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 1px 5px 11px 3px #6b00ff87;
+}
+
+.jumbotron {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: #eee; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, #3502ff2b , #2aff003d);
+}
+
+.carousel-caption-first-slide {
+  bottom: 5rem !important;
+  z-index: 10;
+  position: absolute;
+  right: 15%;
+  left: 15%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+}
+
+.cart-count {
+  background: red;
+  color: white;
+  vertical-align: -webkit-baseline-middle;
+  padding: 0px 5px 0px 5px;
+}
+
+.carousel-item {
+  background: url('/images/hosting-banner.jpg');
+  background-size: 100% 100%;
+}
+
+.marketing:hover .col-lg-4:hover{
+  /*border: 1px solid grey;*/
+  border-radius: 5px;
+  background: #78787829;
+  box-shadow: 0px 0px 7px 1px lightblue;
+}
+
+p.heading {
+  font-size: 18px;
+}
+
+section.pricing-section {
+  background-color: #ECF4F7;
+  padding: 40px 0px 40px 0px;
 }

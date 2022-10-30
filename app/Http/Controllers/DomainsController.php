@@ -32,4 +32,49 @@ class DomainsController extends Controller
     {
         dd($domain);
     }
+
+    public function addToCart($domain)
+    {
+        $cart = session()->get('cart');
+        // dd(preg_replace('/ .*/', '.', $domain));
+        $prefix = substr($domain, strpos($domain, ".") + 1); 
+        if ($prefix == 'com') {
+            $price = '$11.25';
+        } elseif ($prefix == '.net') {
+            $price = '$14.25';
+        } else {
+            $price = '$15';
+        }
+        // if cart is empty then this the first product
+        if(!$cart) {
+            $cart = [
+                    $domain => [
+                        "name" => $domain,
+                        "quantity" => 1,
+                        "price" => $price,
+                    ]
+            ];
+
+            session()->put('cart', $cart);
+            return redirect()->back()->with('success', 'Product added to cart successfully!');
+        }
+
+        // if cart not empty then check if this product exist then increment quantity
+        if(isset($cart[$domain])) {
+            $cart[$id]['quantity']++;
+            session()->put('cart', $cart);
+            return redirect()->back()->with('success', 'Product added to cart successfully!');
+
+        }
+
+        // if item not exist in cart then add to cart with quantity = 1
+        $cart[$domain] = [
+            "name" => $domain,
+            "quantity" => 1,
+            "price" => $price,
+        ];
+
+        session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Product added to cart successfully!');
+    }
 }

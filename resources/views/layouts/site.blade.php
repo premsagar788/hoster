@@ -9,7 +9,8 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
 
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" >
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <meta name="theme-color" content="#7952b3">
 
@@ -49,6 +50,9 @@
             <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('pricing') }}">Pricing</a>
             <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('faq') }}">FAQ</a>
             <a class="py-2 btn btn-primary" href="#">Login</a>
+            <a class="me-2 text-dark text-decoration-none" href="{{ url('/cart') }}"><i class="fa fa-shopping-cart"></i> 
+              <span class="cart-count">{{ count((array) session('cart')) }}</span>
+            </a>
           </nav>
         </div>
       </header>
@@ -57,10 +61,13 @@
     <main>
       @yield('content')
         <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-      </footer>
+        <section class="footer-section">
+          <footer class="container">
+            <p class="float-end"><a href="#">Back to top</a></p>
+            <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+          </footer>
+        </section>
+      
     </main>
 
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
