@@ -53,17 +53,17 @@ class DomainsController extends Controller
 
     private function DNSRecords($domain)
     {
-        $aRec = dns_get_record($domain, DNS_A);
-        $cname = dns_get_record($domain, DNS_CNAME);
-        $hInfo = dns_get_record($domain, DNS_HINFO);
-        $NAPtr = dns_get_record($domain, DNS_NAPTR);
-        $MX = dns_get_record($domain, DNS_MX);
-        $NS = dns_get_record($domain, DNS_NS);
-        $PTR = dns_get_record($domain, DNS_PTR);
-        $SOA = dns_get_record($domain, DNS_SOA);
-        $TXT = dns_get_record($domain, DNS_TXT);
-        $AAAA = dns_get_record($domain, DNS_AAAA);
-        $SRV = dns_get_record($domain, DNS_SRV);
+        $aRec = dns_get_record($domain, DNS_A, $authoritative, $additional, $raw);
+        $cname = dns_get_record($domain, DNS_CNAME, $authoritative, $additional, $raw);
+        $hInfo = dns_get_record($domain, DNS_HINFO, $authoritative, $additional, $raw);
+        $NAPtr = dns_get_record($domain, DNS_NAPTR, $authoritative, $additional, $raw);
+        $MX = dns_get_record($domain, DNS_MX, $authoritative, $additional, $raw);
+        $NS = dns_get_record($domain, DNS_NS, $authoritative, $additional, $raw);
+        $PTR = dns_get_record($domain, DNS_PTR, $authoritative, $additional, $raw);
+        $SOA = dns_get_record($domain, DNS_SOA, $authoritative, $additional, $raw);
+        $TXT = dns_get_record($domain, DNS_TXT, $authoritative, $additional, $raw);
+        $AAAA = dns_get_record($domain, DNS_AAAA, $authoritative, $additional, $raw);
+        $SRV = dns_get_record($domain, DNS_SRV, $authoritative, $additional, $raw);
 
         return view('whois')->with(compact('aRec', 'cname', 'hInfo', 'NAPtr', 'MX', 'NS', 'PTR', 'SOA', 'TXT', 'AAAA', 'SRV'));
     }
