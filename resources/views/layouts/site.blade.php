@@ -49,7 +49,7 @@
             <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('domains') }}">Domains</a>
             <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('pricing') }}">Pricing</a>
             <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('faq') }}">FAQ</a>
-            <a class="py-2 btn btn-primary" href="#">Login</a>
+            <a class="py-2 btn btn-primary" href="{{ url('login') }}">Login</a>
             <a class="me-2 text-dark text-decoration-none" href="{{ url('/cart') }}"><i class="fa fa-shopping-cart"></i> 
               <span class="cart-count">{{ count((array) session('cart')) }}</span>
             </a>

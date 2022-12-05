@@ -43,3 +43,5 @@ Route::get('/faq', function(){
 	return view('faq');
 });
 
+Route::get('auth/google', 'App\Http\Controllers\SocialController@googleRedirect');
+Route::get('auth/google/callback', 'App\Http\Controllers\SocialController@loginWithGoogle');
