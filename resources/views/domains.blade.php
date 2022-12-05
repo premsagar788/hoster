@@ -21,9 +21,9 @@
     <form action="{{ url('/domains') }}" method="post">
       @csrf
       <div class="col col-lg-4 col-md-6 col-sm-12 mb-3">
-        <input type="text" name="domain" class="form-control col col-lg-4" placeholder="Enter your preferred domain name" @if(isset($domain)) value="{{ $domain }}" @endif>
+        <input type="text" name="domain" class="form-control col col-lg-4" placeholder="Enter your preferred domain name" @if(isset($domain)) value="{{ $domain }}" @endif required>
       </div>
-      <input type="submit" name="submit" value="Check »" class="btn btn-primary btn-lg" required>
+      <input type="submit" name="submit" value="Check »" class="btn btn-primary btn-lg">
     </form>
     @if(isset($status))
     @if($status == 'Unavailable')

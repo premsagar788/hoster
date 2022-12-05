@@ -20,7 +20,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', function (){
+	return redirect('/');
+});
+
+Route::get('/my-account', [App\Http\Controllers\HomeController::class, 'myAccount']);
 
 Route::get('/cart', [App\Http\Controllers\FrontendController::class, 'cart']);
 

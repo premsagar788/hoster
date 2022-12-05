@@ -13,6 +13,7 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <meta name="theme-color" content="#7952b3">
+    <meta charset = "UTF-8" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -49,7 +50,14 @@
             <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('domains') }}">Domains</a>
             <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('pricing') }}">Pricing</a>
             <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('faq') }}">FAQ</a>
-            <a class="py-2 btn btn-primary" href="{{ url('login') }}">Login</a>
+            @auth
+              <a class="py-2 btn" href="{{ url('my-account') }}">
+                <span class="fa fa-user"></span>
+              </a>
+            @endauth
+            @guest
+              <a class="py-2 btn btn-primary" href="{{ url('login') }}">Login</a>
+            @endguest
             <a class="me-2 text-dark text-decoration-none" href="{{ url('/cart') }}"><i class="fa fa-shopping-cart"></i> 
               <span class="cart-count">{{ count((array) session('cart')) }}</span>
             </a>

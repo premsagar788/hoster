@@ -14,9 +14,9 @@
           <form action="{{ url('/domains') }}" method="post">
             @csrf
             <div class="col col-lg-4 col-md-6 col-sm-12 mb-3">
-              <input type="text" name="domain" class="form-control col col-lg-4" placeholder="Enter your preferred domain name">
+              <input type="text" name="domain" class="form-control col col-lg-4" placeholder="Enter your preferred domain name" required />
             </div>
-            <input type="submit" name="submit" value="Check »" class="btn btn-primary btn-lg">
+            <input type="submit" name="submit" value="Check »" class="btn btn-primary btn-lg" >
           </form>
         </div>
       </div>
