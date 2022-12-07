@@ -49,3 +49,8 @@ Route::get('/faq', function(){
 
 Route::get('auth/google', 'App\Http\Controllers\SocialController@googleRedirect');
 Route::get('auth/google/callback', 'App\Http\Controllers\SocialController@loginWithGoogle');
+
+Route::group(['prefix'=>'user', 'middleware' => 'auth', 'role:user'], function(){
+    Route::get('/dashboard', [App\Http\Controllers\UserController::class, 'index']);
+    Route::get('/profile', [App\Http\Controllers\UserController::class, 'userProfile']);
+});

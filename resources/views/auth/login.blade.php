@@ -39,12 +39,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end"></label>
-                            <div class="col-md-6">
-                                <a class="btn btn-primary" href="{{ url('auth/google') }}"> Login with Google</a>
-                            </div>
-                        </div>
+                        
 
                         <div class="row mb-3">
                             <div class="col-md-6 offset-md-4">
@@ -69,6 +64,13 @@
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                                 @endif
+                            </div>
+                        </div>
+                        <div class="row mb-3 pt-2">
+                            <label for="password" class="col-md-4 col-form-label text-md-end"></label>
+                            <div class="col-md-6">
+                                <a class="btn btn-danger" href="{{ url('auth/google') }}"> Login with Google <span class="fa fa-google"></span></a>
+                                <p class="pt-1">Don't have an account? <a href="{{ url('register') }}">Register</a></p>
                             </div>
                         </div>
                     </form>
