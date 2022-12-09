@@ -27,10 +27,4 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function myAccount()
-    {
-        if (Auth::user()) {
-            return view('my-account');
-        }
-    }
 }

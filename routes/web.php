@@ -24,8 +24,6 @@ Route::get('/home', function (){
 	return redirect('/');
 });
 
-Route::get('/my-account', [App\Http\Controllers\HomeController::class, 'myAccount']);
-
 Route::get('/cart', [App\Http\Controllers\FrontendController::class, 'cart']);
 
 Route::get('/about', function(){
@@ -49,3 +47,8 @@ Route::get('/faq', function(){
 
 Route::get('auth/google', 'App\Http\Controllers\SocialController@googleRedirect');
 Route::get('auth/google/callback', 'App\Http\Controllers\SocialController@loginWithGoogle');
+
+Route::group(['prefix'=>'user', 'middleware' => 'auth', 'role:user'], function(){
+    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
+    Route::get('/profile', [App\Http\Controllers\DashboardController::class, 'userProfile']);
+});
