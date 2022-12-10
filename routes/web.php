@@ -52,3 +52,8 @@ Route::group(['prefix'=>'user', 'middleware' => 'auth', 'role:user'], function()
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
     Route::get('/profile', [App\Http\Controllers\DashboardController::class, 'userProfile']);
 });
+
+Route::group(['prefix'=>'admin', 'middleware' => 'auth', 'role:admin'], function(){
+    Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index']);
+    Route::get('/profile', [App\Http\Controllers\AdminController::class, 'userProfile']);
+});
