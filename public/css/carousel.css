@@ -105,9 +105,8 @@ i.fa {
 }
 
 section.footer-section {
-  margin-top: 1rem;
   background: #472f7c42;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 10px;
   box-shadow: 1px 5px 11px 3px #6b00ff87;
 }
