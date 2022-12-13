@@ -25,6 +25,7 @@ Route::get('/home', function (){
 });
 
 Route::get('/cart', [App\Http\Controllers\FrontendController::class, 'cart']);
+Route::get('/checkout', [App\Http\Controllers\FrontendController::class, 'checkout'])->middleware('auth');
 
 Route::get('/about', function(){
 	return view('about');
