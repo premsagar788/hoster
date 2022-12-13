@@ -26,7 +26,7 @@ class UpdateUserAddRole extends Migration
     public function down()
     {
         Schema::table('users', function($table) {
-            $table->string('role');
+            $table->dropColumn('role');
         });
     }
 }
