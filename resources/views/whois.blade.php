@@ -12,53 +12,108 @@
 </div>
 <div class="container cart">
   <div class="row">
-    <table class="table-bordered">
-      @if(isset($whois))
-      @foreach($whois as $data)
-      @php $type = $data['type'] @endphp
-      @if ($type == 'A')
-      <tr>
-        <th>A</th>
-        <td>IP</td>
-      </tr>
-      <tr>
-        <td>{{ $data['ip'] }}</td>
-        
-      </tr>
-      @endif
-      @if ($type == 'SOA')
-      <th>SOA</th>
-      <tr>
-        <td>MNAMe</td>
-        <td>RNAME</td>
-      </tr>
-      <tr>
-        
-        <td>{{ $data['mname'] }}</td>
-        <td>{{ $data['rname'] }}</td>
-      </tr>
-      @endif
-      @if ($type == 'MX' || $type == 'NS')
-      <li class="list-group-item">{{ $data['type'] }}: {{ $data['target'] }}</li>
-      @endif
+    <div class="col col-lg-8 col-sm-12 col-md-6">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover" style="width:100%" border="1">
+          <thead>
+            <tr>
+              <th scope="col">Record type</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              @if(!empty($aRec))
+              <th>A</th>
+              <td>
+                @foreach ($aRec as $aRec)
+                <span>{{ $aRec['ip']  . ' ' }}</span><br>
+                @endforeach
+              </td>
+              @endif
+            </tr>
 
-      
-      @endforeach
-      @endif
-    </table>
+            <tr>
+              @if(!empty($NS))
+              <th>NS</th>
+              <td>
+                @foreach ($NS as $NS)
+                <span>{{ $NS['target'] . ' ' }}</span><br>
+                @endforeach
+              </td>
+              @endif
+            </tr>
 
-    <div class="card" style="width: 18rem;">
-      <div class="card-header">
-        Featured
-      </div>
-      <ul class="list-group list-group-flush">
-        
-        
-      </ul>
-    </div>
+            <tr>
+              @if(!empty($MX))
+              <th>NS</th>
+              <td>
+                @foreach ($MX as $MX)
+                <span>{{ $MX['target'] . ' ' }}</span><br>
+                @endforeach
+              </td>
+              @endif
+            </tr>
 
-    
-  </div>
+            <tr>
+              @if(!empty($SOA))
+              <th>SOA</th>
+              <td>
+                @foreach ($SOA as $SOA)
+                <span>{{ 'mname: ' . $SOA['mname'] }}</span><br>
+                <span>{{ 'rname: ' . $SOA['rname'] }}</span>
+                @endforeach
+              </td>
+              @endif
+            </tr>
+
+            <tr>
+              @if(!empty($TXT))
+              <th>TXT</th>
+              <td>
+                @foreach ($TXT as $TXT)
+                <span>{{ $TXT['txt'] }}</span><br>
+                @endforeach
+              </td>
+              @endif
+            </tr>
+
+            <tr>
+              @if(!empty($AAAA))
+              <th>AAAA</th>
+              <td>
+                @foreach ($AAAA as $AAAA)
+                <span>{{ $AAAA['ipv6'] }}</span><br>
+                @endforeach
+              </td>
+              @endif
+            </tr>
+
+
+
+            
+          </tbody>
+
+    <!-- 
+    aRec
+    cname
+    hInfo
+    NAPtr
+    MX
+    NS
+    PTR
+    SOA
+    TXT
+    AAAA
+    SRV
+    domain -->
+  </table>
+</div>
+</div>
+<div class="col col-lg-4 col-sm-12 col-md-12"></div>
+
+
+</div>
 </div>
 <br>
 <section class="partners">
