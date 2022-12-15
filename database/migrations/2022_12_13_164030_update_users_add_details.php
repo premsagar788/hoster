@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateUserAddRole extends Migration
+class UpdateUsersAddDetails extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,10 @@ class UpdateUserAddRole extends Migration
     public function up()
     {
         Schema::table('users', function($table) {
-            $table->string('role')->default('user');
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('country')->nullable();
+            $table->string('phone')->nullable();
         });
     }
 
@@ -26,7 +29,7 @@ class UpdateUserAddRole extends Migration
     public function down()
     {
         Schema::table('users', function($table) {
-            $table->dropColumn('role');
+            $table->dropColumn('address', 'city', 'country', 'phone');
         });
     }
 }

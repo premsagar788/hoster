@@ -18,8 +18,7 @@ class DomainsController extends Controller
 
         if (gethostbyname($domain) != $domain ) {
             $status = 'Unavailable';
-        }
-        else {
+        } else {
             $status = 'Available';
         }
         return view('domains')->with(compact('status', 'domain'));
@@ -53,19 +52,19 @@ class DomainsController extends Controller
 
     private function DNSRecords($domain)
     {
-        $aRec = dns_get_record($domain, DNS_A, $authoritative, $additional, $raw);
-        $cname = dns_get_record($domain, DNS_CNAME, $authoritative, $additional, $raw);
-        $hInfo = dns_get_record($domain, DNS_HINFO, $authoritative, $additional, $raw);
-        $NAPtr = dns_get_record($domain, DNS_NAPTR, $authoritative, $additional, $raw);
-        $MX = dns_get_record($domain, DNS_MX, $authoritative, $additional, $raw);
-        $NS = dns_get_record($domain, DNS_NS, $authoritative, $additional, $raw);
-        $PTR = dns_get_record($domain, DNS_PTR, $authoritative, $additional, $raw);
-        $SOA = dns_get_record($domain, DNS_SOA, $authoritative, $additional, $raw);
-        $TXT = dns_get_record($domain, DNS_TXT, $authoritative, $additional, $raw);
-        $AAAA = dns_get_record($domain, DNS_AAAA, $authoritative, $additional, $raw);
-        $SRV = dns_get_record($domain, DNS_SRV, $authoritative, $additional, $raw);
+        $aRec = dns_get_record($domain, DNS_A, $authoritative, $additional);
+        $cname = dns_get_record($domain, DNS_CNAME, $authoritative, $additional);
+        $hInfo = dns_get_record($domain, DNS_HINFO, $authoritative, $additional);
+        $NAPtr = dns_get_record($domain, DNS_NAPTR, $authoritative, $additional);
+        $MX = dns_get_record($domain, DNS_MX, $authoritative, $additional);
+        $NS = dns_get_record($domain, DNS_NS, $authoritative, $additional);
+        $PTR = dns_get_record($domain, DNS_PTR, $authoritative, $additional);
+        $SOA = dns_get_record($domain, DNS_SOA, $authoritative, $additional);
+        $TXT = dns_get_record($domain, DNS_TXT, $authoritative, $additional);
+        $AAAA = dns_get_record($domain, DNS_AAAA, $authoritative, $additional);
+        $SRV = dns_get_record($domain, DNS_SRV, $authoritative, $additional);
 
-        return view('whois')->with(compact('aRec', 'cname', 'hInfo', 'NAPtr', 'MX', 'NS', 'PTR', 'SOA', 'TXT', 'AAAA', 'SRV'));
+        return view('whois')->with(compact('aRec', 'cname', 'hInfo', 'NAPtr', 'MX', 'NS', 'PTR', 'SOA', 'TXT', 'AAAA', 'domain'));
     }
 
     public function addToCart($domain)
