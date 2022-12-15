@@ -26,7 +26,7 @@ class UpdateUsersTableAddGoogleLogin extends Migration
     public function down()
     {
         Schema::table('users', function($table) {
-            $table->string('google_id');
+            $table->dropColumn('google_id');
         });
     }
 }

@@ -25,6 +25,8 @@ Route::get('/home', function (){
 });
 
 Route::get('/cart', [App\Http\Controllers\FrontendController::class, 'cart']);
+Route::get('/checkout', [App\Http\Controllers\FrontendController::class, 'checkout'])->middleware('auth');
+Route::post('/checkout', [App\Http\Controllers\FrontendController::class, 'processCheckout'])->middleware('auth');
 
 Route::get('/about', function(){
 	return view('about');
@@ -51,4 +53,9 @@ Route::get('auth/google/callback', 'App\Http\Controllers\SocialController@loginW
 Route::group(['prefix'=>'user', 'middleware' => 'auth', 'role:user'], function(){
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
     Route::get('/profile', [App\Http\Controllers\DashboardController::class, 'userProfile']);
+});
+
+Route::group(['prefix'=>'admin', 'middleware' => 'auth', 'role:admin'], function(){
+    Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index']);
+    Route::get('/profile', [App\Http\Controllers\AdminController::class, 'userProfile']);
 });
