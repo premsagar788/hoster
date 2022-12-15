@@ -21,11 +21,11 @@
             <div class="row">
               <div class="col-xs-12 col-sm-6">
                 <label for="inputName1">Name</label>
-                <input id="inputName1" type="text" value="{{ Auth::user()->name }}" class="form-control" name="name" required>
+                <input id="inputName1" type="text" name="name" value="{{ Auth::user()->name }}" class="form-control" required>
               </div>
               <div class="col-xs-12 col-sm-6">
                 <label for="inputEmail1">Email</label>
-                <input id="inputEmail1" type="email" class="form-control" required value="{{ Auth::user()->email }}" readonly="">
+                <input id="inputEmail1" type="email" name="email" class="form-control" required value="{{ Auth::user()->email }}" readonly="">
               </div>
               <div class="col-xs-12 col-sm-6">
                 <label for="inputName1">Address</label>
