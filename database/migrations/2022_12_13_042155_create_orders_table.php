@@ -16,10 +16,12 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('product');
+            $table->unsignedBigInteger('quantity');
             $table->string('price');
             $table->string('payment_method');
             $table->unsignedBigInteger('user_id');
-            $table->integer('status');
+            $table->enum('status', ['Pending', 'Cancelled', 'Paid'])->default('Pending');
+            $table->string('additional notes')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
