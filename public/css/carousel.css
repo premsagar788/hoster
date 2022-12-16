@@ -213,3 +213,16 @@ section.partners {
     display: block;
   }
 }
+
+.custom-toast {
+  background: deepskyblue;
+  position: absolute;
+  right: 5%;
+  padding: 10px;
+  top: 20%;
+  color: black;
+}
+
+.img-responsive {
+  width: 100%;
+}
