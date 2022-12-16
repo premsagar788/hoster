@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Order;
+use App\Http\Requests\CheckoutPostRequest;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -25,9 +26,10 @@ class FrontendController extends Controller
     	return view('checkout');
     }
 
-    public function processCheckout(Request $request)
+    public function processCheckout(CheckoutPostRequest $request)
     {
-		$user = User::find(auth()->user()->id);
+		$user = User::findOrFail(auth()->user()->id);
+
     	$user->name = $request->input('name');
     	$user->address = $request->input('address');
     	$user->city = $request->input('city');
