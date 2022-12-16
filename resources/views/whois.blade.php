@@ -88,32 +88,12 @@
               </td>
               @endif
             </tr>
-
-
-
-            
           </tbody>
-
-    <!-- 
-    aRec
-    cname
-    hInfo
-    NAPtr
-    MX
-    NS
-    PTR
-    SOA
-    TXT
-    AAAA
-    SRV
-    domain -->
-  </table>
-</div>
-</div>
-<div class="col col-lg-4 col-sm-12 col-md-12"></div>
-
-
-</div>
+        </table>
+      </div>
+    </div>
+    <div class="col col-lg-4 col-sm-12 col-md-12"></div>
+  </div>
 </div>
 <br>
 <section class="partners">
