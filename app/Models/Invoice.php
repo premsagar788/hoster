@@ -22,7 +22,7 @@ class Invoice extends Model
 		'price',
 		'payment_method',
 		'user_id',
-		'order_id,'
+		'order_id',
 		'status'
     ];
 }
