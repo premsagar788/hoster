@@ -18,6 +18,13 @@
     </div>
     @endif
 
+    @if (session('success'))
+    <div class="custom-toast">
+      <strong class="mr-auto">Notification</strong>
+      <small>Product added to the cart!</small>
+    </div>
+    @endif
+
     <form action="{{ url('/domains') }}" method="post">
       @csrf
       <div class="col col-lg-4 col-md-6 col-sm-12 mb-3">
