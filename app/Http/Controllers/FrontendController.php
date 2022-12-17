@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Order;
 use App\Http\Requests\CheckoutPostRequest;
-use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
