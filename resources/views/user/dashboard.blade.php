@@ -2,6 +2,8 @@
 
 @section('title', 'User Dashboard')
 
+@include('user.sidebar')
+
 @section('content')
 <!-- Begin Page Content -->
 <div class="container-fluid">
