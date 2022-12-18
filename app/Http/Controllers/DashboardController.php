@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Order;
 use App\Models\Invoice;
 use Illuminate\Http\Request;
+use App\Http\Requests\UpdateUserProfile;
 
 class DashboardController extends Controller
 {
@@ -28,5 +30,22 @@ class DashboardController extends Controller
     {
     	$invoices = Invoice::all();
     	return view('user.invoices')->with(compact('invoices'));
+    }
+
+    public function updateProfile(UpdateUserProfile $request)
+    {
+    	$user = User::findOrFail(auth()->user()->id);
+
+    	try {
+		  $user->name = $request->input('fullname');
+	    	$user->address = $request->input('address');
+	    	$user->city = $request->input('city');
+	    	$user->country = $request->input('country');
+	    	$user->phone = $request->input('phone');
+	    	$user->save();
+    		return redirect('/user/profile')->with('message', 'User profile updated successfully!');
+		} catch (\Exception $e) {
+		    return $e->getMessage();
+		}
     }
 }
