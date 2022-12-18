@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Order;
+use App\Models\Invoice;
+use Illuminate\Http\Request;
 use App\Http\Requests\CheckoutPostRequest;
 
 class FrontendController extends Controller
@@ -44,8 +46,21 @@ class FrontendController extends Controller
 	    	$order->price = $key['price'];
 	    	$order->payment_method = $request->input('payment');
 	    	$order->user_id = $user->id;
+            $order->additional_notes = $request->input('notes');
 	    	$order->save();
 	    	$this->success = true;
+
+            $invoice = new Invoice();
+
+            $invoice->uoid = rand(000000000000000, 999999999999999);
+            $invoice->product = $key['name'];
+            $invoice->quantity = $key['quantity'];
+            $invoice->price = $key['price'];
+            $invoice->payment_method = $request->input('payment');            
+            $invoice->user_id = $user->id;
+            $invoice->order_id = $order->id;
+
+            $invoice->save();
     	}
     	if ($this->isSuccess()) {
     		session()->forget('cart');

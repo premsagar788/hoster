@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home', function (){
+Route::get('/home', function () {
 	return redirect('/');
 });
 
@@ -28,17 +28,11 @@ Route::get('/cart', [App\Http\Controllers\FrontendController::class, 'cart']);
 Route::get('/checkout', [App\Http\Controllers\FrontendController::class, 'checkout'])->middleware('auth');
 Route::post('/checkout', [App\Http\Controllers\FrontendController::class, 'processCheckout'])->middleware('auth');
 
-Route::controller(App\Http\Controllers\FrontendController::class)->middleware(['auth'])->group(function () {
-    Route::get('/checkout', 'checkout');
-    Route::post('/checkout', 'processCheckout');
-    Route::post('/checkout', 'orderPlaced');
-});
-
-Route::get('/about', function(){
+Route::get('/about', function() {
 	return view('about');
 });
 
-Route::get('/pricing', function(){
+Route::get('/pricing', function() {
 	return view('pricing');
 });
 
@@ -56,12 +50,16 @@ Route::get('/faq', function(){
 Route::get('auth/google', 'App\Http\Controllers\SocialController@googleRedirect');
 Route::get('auth/google/callback', 'App\Http\Controllers\SocialController@loginWithGoogle');
 
-Route::group(['prefix'=>'user', 'middleware' => 'auth', 'role:user'], function(){
-    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
-    Route::get('/profile', [App\Http\Controllers\DashboardController::class, 'userProfile']);
+Route::group(['controller'=> App\Http\Controllers\DashboardController::class, 
+    'prefix'=>'user', 'middleware' => 'auth', 'role:user'], function() {
+    Route::get('/dashboard', 'index');
+    Route::get('/profile', 'userProfile');
+    Route::post('/profile', 'updateProfile');
+    Route::get('/orders', 'orders');
+    Route::get('/invoices', 'invoices');
 });
 
-Route::group(['prefix'=>'admin', 'middleware' => 'auth', 'role:admin'], function(){
+Route::group(['prefix'=>'admin', 'middleware' => 'auth', 'role:admin'], function() {
     Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index']);
     Route::get('/profile', [App\Http\Controllers\AdminController::class, 'userProfile']);
 });
