@@ -67,7 +67,7 @@
             <a class="nav-link" href="{{ url('faq') }}">FAQ</a>
           </li>
           @auth
-          <a class="py-2 btn" href="{{ url('my-account') }}">
+          <a class="py-2 btn" href="@if (auth()->user()->role == 'user') {{ url('user/dashboard') }} @else {{ url('admin/dashboard') }} @endif">
             <span class="fa fa-user"></span>
           </a>
           @endauth
