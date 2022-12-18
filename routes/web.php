@@ -50,11 +50,13 @@ Route::get('/faq', function(){
 Route::get('auth/google', 'App\Http\Controllers\SocialController@googleRedirect');
 Route::get('auth/google/callback', 'App\Http\Controllers\SocialController@loginWithGoogle');
 
-Route::group(['prefix'=>'user', 'middleware' => 'auth', 'role:user'], function() {
-    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
-    Route::get('/profile', [App\Http\Controllers\DashboardController::class, 'userProfile']);
-    Route::get('/orders', [App\Http\Controllers\DashboardController::class, 'orders']);
-    Route::get('/invoices', [App\Http\Controllers\DashboardController::class, 'invoices']);
+Route::group(['controller'=> App\Http\Controllers\DashboardController::class, 
+    'prefix'=>'user', 'middleware' => 'auth', 'role:user'], function() {
+    Route::get('/dashboard', 'index');
+    Route::get('/profile', 'userProfile');
+    Route::post('/profile', 'updateProfile');
+    Route::get('/orders', 'orders');
+    Route::get('/invoices', 'invoices');
 });
 
 Route::group(['prefix'=>'admin', 'middleware' => 'auth', 'role:admin'], function() {
