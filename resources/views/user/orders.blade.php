@@ -20,9 +20,8 @@
 			<table class="table table-hover table-bordered table-responsive-sm">
 				<thead class="bg-dark text-white">
 					<tr>
-						<td>Product</td>
-						<td>Year/(s)</td>
-						<td>Price</td>
+						<td>Order No</td>
+						<td>Payment Method</td>
 						<td>Status</td>
 						<td>Action</td>
 					</tr>
@@ -31,9 +30,8 @@
 					@if($orders)
 					@foreach($orders as $order)
 					<tr>
-						<td>{{ $order->product }}</td>
-						<td>{{ $order->quantity }}</td>
-						<td>{{ $order->price }}</td>
+						<td>{{ $order->order_no }}</td>
+						<td>{{ $order->payment_method }}</td>
 						<td>
 							@if ($order->status == 'Pending')
 								<span class="text-danger">{{ $order->status }}</span>
