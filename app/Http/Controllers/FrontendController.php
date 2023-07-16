@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Invoice;
@@ -38,34 +39,46 @@ class FrontendController extends Controller
     	$user->phone = $request->input('phone');
     	$user->save();
 
+        $details = '';
+        $total = 0;
+
+    	$order = new Order();
+    	$order->payment_method = $request->input('payment');
+    	$order->user_id = $user->id;
+        $order->additional_notes = $request->input('notes');
+    	$order->save();
+
     	foreach (session('cart') as $key) {
-	    	$order = new Order();
-	    	
-	    	$order->product = $key['name'];
-	    	$order->quantity = $key['quantity'];
-	    	$order->price = $key['price'];
-	    	$order->payment_method = $request->input('payment');
-	    	$order->user_id = $user->id;
-            $order->additional_notes = $request->input('notes');
-	    	$order->save();
-	    	$this->success = true;
+            $insert = DB::table('order_details')->insert([
+                'order_id'  => $order->id, 
+                'product'   => $key['name'],
+                'years'     => $key['quantity'],
+                'price'     => ltrim($key['price'], '$'),
+                'user_id'   => auth()->user()->id
+            ]);
+            $this->success = true;
+            // $invoice = new Invoice();
 
-            $invoice = new Invoice();
+            // $invoice->uoid = rand(000000000000000, 999999999999999);
+            // $invoice->product = $key['name'];
+            // $invoice->quantity = $key['quantity'];
+            // $invoice->price = $key['price'];
+            // $invoice->payment_method = $request->input('payment');            
+            // $invoice->user_id = $user->id;
+            // $invoice->order_id = $order->id;
 
-            $invoice->uoid = rand(000000000000000, 999999999999999);
-            $invoice->product = $key['name'];
-            $invoice->quantity = $key['quantity'];
-            $invoice->price = $key['price'];
-            $invoice->payment_method = $request->input('payment');            
-            $invoice->user_id = $user->id;
-            $invoice->order_id = $order->id;
+            // $invoice->save();
 
-            $invoice->save();
-    	}
+            // $total = $total + ltrim($order->price, '$');
+            // $details =  $order->id . ',' . $details;
+    	}        
+
     	if ($this->isSuccess()) {
     		session()->forget('cart');
     		return redirect('/')->with('success', 'Order placed successfully!');   
-    	}
+    	} else {
+            return redirect()->back()->withErrors();
+        }
     }
 
     private function isSuccess(): bool
