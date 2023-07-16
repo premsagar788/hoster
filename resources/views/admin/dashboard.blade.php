@@ -2,6 +2,8 @@
 
 @section('title', 'Admin Dashboard')
 
+@include('admin.sidebar')
+
 @section('content')
 <!-- Begin Page Content -->
 <div class="container-fluid">
