@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Invoice;
@@ -22,7 +23,7 @@ class DashboardController extends Controller
 
     public function orders()
     {
-    	$orders = Order::where('user_id', auth()->user()->id)->get();
+        $orders = DB::table('order_details')->where('user_id', auth()->user()->id)->get();
     	return view('user.orders')->with(compact('orders'));
     }
 
