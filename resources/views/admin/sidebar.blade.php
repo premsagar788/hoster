@@ -16,21 +16,21 @@
 </li> -->
 
 <li class="nav-item">
-	<a class="nav-link" href="{{ url('user/orders') }}">
+	<a class="nav-link" href="{{ url('admin/orders') }}">
 		<i class="fas fa-fw fa-shopping-cart"></i>
 		<span>Orders</span>
 	</a>
 </li>
 
 <li class="nav-item">
-	<a class="nav-link" href="{{ url('user/invoices') }}">
+	<a class="nav-link" href="{{ url('admin/invoices') }}">
 		<i class="fas fa-fw fa-file"></i>
 		<span>Invoices</span>
 	</a>
 </li>
 
 <li class="nav-item">
-	<a class="nav-link" href="{{ url('user/profile') }}">
+	<a class="nav-link" href="{{ url('admin/profile') }}">
 		<i class="fas fa-fw fa-user"></i>
 		<span>Profile</span>
 	</a>
