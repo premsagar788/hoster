@@ -62,4 +62,6 @@ Route::group(['controller'=> App\Http\Controllers\DashboardController::class,
 Route::group(['prefix'=>'admin', 'middleware' => 'auth', 'role:admin'], function() {
     Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index']);
     Route::get('/profile', [App\Http\Controllers\AdminController::class, 'userProfile']);
+    Route::get('/orders', [App\Http\Controllers\AdminController::class, 'orders']);
+    Route::get('/invoices', [App\Http\Controllers\AdminController::class, 'invoices']);
 });
