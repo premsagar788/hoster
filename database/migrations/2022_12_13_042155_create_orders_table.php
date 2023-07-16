@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->string('payment_method');
             $table->unsignedBigInteger('user_id');
             $table->enum('status', ['Pending', 'Cancelled', 'Paid'])->default('Pending');
+            $table->unsignedBigInteger('order_no');
             $table->string('additional_notes')->nullable();
             $table->timestamps();
 

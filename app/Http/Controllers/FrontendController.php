@@ -45,12 +45,13 @@ class FrontendController extends Controller
     	$order = new Order();
     	$order->payment_method = $request->input('payment');
     	$order->user_id = $user->id;
+        $order->order_no = rand(000000000000000, 999999999999999);
         $order->additional_notes = $request->input('notes');
     	$order->save();
 
     	foreach (session('cart') as $key) {
             $insert = DB::table('order_details')->insert([
-                'order_id'  => $order->id, 
+                'order_id'  => $order->order_no, 
                 'product'   => $key['name'],
                 'years'     => $key['quantity'],
                 'price'     => ltrim($key['price'], '$'),

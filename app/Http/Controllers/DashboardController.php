@@ -23,7 +23,7 @@ class DashboardController extends Controller
 
     public function orders()
     {
-        $orders = DB::table('order_details')->where('user_id', auth()->user()->id)->get();
+        $orders = DB::table('orders')->where('user_id', auth()->user()->id)->get()->toArray();
     	return view('user.orders')->with(compact('orders'));
     }
 
