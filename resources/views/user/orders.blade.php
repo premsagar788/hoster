@@ -40,8 +40,10 @@
 							@endif
 						</td>
 						<td>
-							<a href="#" class="btn btn-primary">Edit</a>
-							<a href="#" class="btn btn-danger">Delete</a>
+							<a href="/user/order/view/{{ $order->order_no }}" class="btn btn-success">
+							<span class="fa fa-eye"></span> View</a>
+							<a href="/user/order/delete/{{ $order->order_no }}" class="btn btn-danger">
+							<span class="fa fa-trash"></span> Delete</a>
 						</td>
 					</tr>
 					@endforeach
