@@ -15,6 +15,15 @@
     <div class="row">
       <div class="col col-lg-8 col-sm-12 col-md-6">
         <div class="form-holder">
+          @if ($errors->any())
+          <div class="alert alert-danger">
+            <ul>
+              @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+          @endif
           <form method="post" action="{{ url('checkout') }}">
             @csrf
 
@@ -25,23 +34,23 @@
               </div>
               <div class="col-xs-12 col-sm-6">
                 <label for="inputEmail1">Email</label>
-                <input id="inputEmail1" type="email" name="email" class="form-control" required value="@auth {{ Auth::user()->email }} @endauth" readonly="">
+                <input id="inputEmail1" type="email" name="email" class="form-control"  value="@auth {{ Auth::user()->email }} @endauth" readonly="">
               </div>
               <div class="col-xs-12 col-sm-6">
                 <label for="inputName1">Address</label>
-                <input id="inputName1" type="text" name="address" value="@auth {{ Auth::user()->address }} @endauth" class="form-control" >
+                <input id="inputName1" type="text" name="address" value="@auth {{ Auth::user()->address }} @endauth" class="form-control" required>
               </div>
               <div class="col-xs-12 col-sm-6">
                 <label for="inputEmail1">City</label>
-                <input id="inputEmail1" type="text" name="city" class="form-control" required value="@auth {{ Auth::user()->city }} @endauth" >
+                <input id="inputEmail1" type="text" name="city" class="form-control" value="@auth {{ Auth::user()->city }} @endauth" required>
               </div>
               <div class="col-xs-12 col-sm-6">
                 <label for="inputEmail1">Country</label>
-                <input id="inputEmail1" type="text" name="country" class="form-control" required value="@auth {{ Auth::user()->country }} @endauth" >
+                <input id="inputEmail1" type="text" name="country" class="form-control" value="@auth {{ Auth::user()->country }} @endauth" required>
               </div>
               <div class="col-xs-12 col-sm-6">
-                <label for="inputName1">Mobile Number</label>
-                <input id="inputName1" type="number" name="mobile" value="@auth {{ Auth::user()->phone }} @endauth" class="form-control" >
+                <label for="inputMobile">Mobile Number</label>
+                <input id="inputMobile" type="number" name="phone" value="@auth {{ Auth::user()->phone }} @endauth" class="form-control" required>
               </div>
               <div class="col-xs-12">
                 <label for="inputSubject1">Payment Method</label>
