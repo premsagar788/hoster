@@ -28,7 +28,7 @@ class CheckoutPostRequest extends FormRequest
             'address'   => 'required|string',
             'city'      => 'required|string',
             'country'   => 'required|string',
-            'phone'     => 'required|string',
+            'phone'     => 'required|integer',
         ];
     }
 
