@@ -3,8 +3,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Hugo 0.84.0">
   <title>@yield('title')</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
@@ -13,7 +11,6 @@
   <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
   <meta name="theme-color" content="#7952b3">
-  <meta charset = "UTF-8" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -33,6 +30,7 @@
     }
   </style>
 
+  @yield('head')
 
   <!-- Custom styles for this template -->
   <link href="{{ asset('css/carousel.css') }}" rel="stylesheet">
