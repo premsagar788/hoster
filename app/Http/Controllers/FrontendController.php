@@ -20,7 +20,8 @@ class FrontendController extends Controller
 
     public function cart()
     {
-        return view('cart');
+        $cart = session('cart');
+        return view('cart')->with(compact('cart'));
     }
 
     public function checkout()
