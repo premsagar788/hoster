@@ -73,11 +73,11 @@ class DomainsController extends Controller
         // dd(preg_replace('/ .*/', '.', $domain));
         $prefix = substr($domain, strpos($domain, ".") + 1); 
         if ($prefix == 'com') {
-            $price = '$11.25';
-        } elseif ($prefix == '.net') {
-            $price = '$14.25';
+            $price = 11.25;
+        } elseif ($prefix == 'net') {
+            $price = 14.25;
         } else {
-            $price = '$15';
+            $price = 15;
         }
         // if cart is empty then this the first product
         if(!$cart) {
@@ -95,7 +95,8 @@ class DomainsController extends Controller
 
         // if cart not empty then check if this product exist then increment quantity
         if(isset($cart[$domain])) {
-            $cart[$id]['quantity']++;
+            // dd($cart[$domain]['quantity']++);
+            $cart[$domain]['quantity']++;
             session()->put('cart', $cart);
             return redirect()->back()->with('success', 'Product added to cart successfully!');
 
@@ -110,5 +111,14 @@ class DomainsController extends Controller
 
         session()->put('cart', $cart);
         return redirect()->back()->with('success', 'Product added to cart successfully!');
+    }
+
+    public function deleteCart($domain)
+    {
+        $cart = session()->get('cart');
+        if (isset($cart[$domain])) {
+            session()->forget('cart');
+        }
+        return response()->json(['success' => 'Product removed from cart']);
     }
 }
