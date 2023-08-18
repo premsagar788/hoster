@@ -41,6 +41,7 @@ Route::controller(App\Http\Controllers\DomainsController::class)->group(function
     Route::post('/domains', 'check');
     Route::get('/whois/{domain}', 'whois');
     Route::get('/add-to-cart/{product}', 'addToCart');
+    Route::post('/delete/{domain}', 'deleteCart');
 });
 
 Route::get('/faq', function(){
