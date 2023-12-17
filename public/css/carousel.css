@@ -108,13 +108,12 @@ section.footer-section {
   background: #472f7c42;
   padding-top: 20px;
   padding-bottom: 10px;
-  box-shadow: 1px 5px 11px 3px #6b00ff87;
 }
 
 .jumbotron {
   padding-top: 30px;
   padding-bottom: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   color: inherit;
   background-color: #eee; /* For browsers that do not support gradients */
   background-image: linear-gradient(to right, #3502ff2b , #2aff003d);
@@ -185,7 +184,7 @@ td.actions {
 }
 
 section.partners {
-  background: #39c!important;
+  background: #3399cc38 !important;
   padding: 40px 0px 40px 0px;
 }
 
