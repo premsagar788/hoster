@@ -36,10 +36,10 @@
   <link href="{{ asset('css/carousel.css') }}" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+  <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="http://127.0.0.1:8000">
-        Hosting
+      <a class="navbar-brand" href="{{ url('/') }}">
+        <span class="fa fa-server fa-2x fa-border"></span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -51,18 +51,20 @@
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ms-auto">
           <!-- Authentication Links -->
-
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('about') }}">About</a>
+            <a class="nav-link" href="{{ url('/') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('domains') }}">Domains</a>
+            <a class="nav-link" href="{{ url('/about') }}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('/domains') }}">Domains</a>
           </li>
           <li class="nav-item">         
-            <a class="nav-link" href="{{ url('pricing') }}">Pricing</a>
+            <a class="nav-link" href="{{ url('/pricing') }}">Pricing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('faq') }}">FAQ</a>
+            <a class="nav-link" href="{{ url('/faq') }}">FAQ</a>
           </li>
           @auth
           <a class="py-2 btn" href="@if (auth()->user()->role == 'user') {{ url('user/dashboard') }} @elseif (auth()->user()->role == 'admin') {{ url('admin/dashboard') }} @else @endif">
@@ -84,12 +86,32 @@
   <main>
     @yield('content')
     <!-- FOOTER -->
-    <section class="footer-section">
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-      </footer>
-    </section>
+    <footer class="d-flex flex-wrap align-items-center border-top pt-5 pb-5">
+      <div class="container">
+        <div class="row ">
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <span class="fa fa-server fa-2x fa-border"></span>
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+            <p class="mb-0 text-muted">© 2023 {{ config('app.name') }}</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <h2>Links</h2>
+              <a href="#" class="nav-link px-2 text-muted">Home</a>
+              <a href="#" class="nav-link px-2 text-muted">Features</a>
+              <a href="#" class="nav-link px-2 text-muted">Pricing</a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <h2>Contact</h2>
+            <p class="m-0"><a href="tel:+12012769057"></a> <span class="fa fa-phone"></span> Phone: +1 201-276-9057</p>
+            <p class="m-0"><a href="mailto:info@domain.com"></a> <span class="fa fa-envelope"></span> Email: info@domain.com</p>
+            <p class="m-0"><a href="mailto:info@domain.com"></a> <span class="fa fa-map-marker"></span> Address: 2846 West Side Avenue, West Orange, New Jersey 07052</p>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
 
   </main>
 
