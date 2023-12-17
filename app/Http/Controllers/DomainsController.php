@@ -54,7 +54,7 @@ class DomainsController extends Controller
     {
         $aRec = dns_get_record($domain, DNS_A, $authoritative, $additional);
         $cname = dns_get_record($domain, DNS_CNAME, $authoritative, $additional);
-        $hInfo = dns_get_record($domain, DNS_HINFO, $authoritative, $additional);
+        // $hInfo = dns_get_record($domain, DNS_HINFO, $authoritative, $additional);
         $NAPtr = dns_get_record($domain, DNS_NAPTR, $authoritative, $additional);
         $MX = dns_get_record($domain, DNS_MX, $authoritative, $additional);
         $NS = dns_get_record($domain, DNS_NS, $authoritative, $additional);
@@ -64,7 +64,7 @@ class DomainsController extends Controller
         $AAAA = dns_get_record($domain, DNS_AAAA, $authoritative, $additional);
         $SRV = dns_get_record($domain, DNS_SRV, $authoritative, $additional);
 
-        return view('whois')->with(compact('aRec', 'cname', 'hInfo', 'NAPtr', 'MX', 'NS', 'PTR', 'SOA', 'TXT', 'AAAA', 'domain'));
+        return view('whois')->with(compact('aRec', 'cname', 'NAPtr', 'MX', 'NS', 'PTR', 'SOA', 'TXT', 'AAAA', 'domain'));
     }
 
     public function addToCart($domain)
