@@ -12,7 +12,7 @@
 </div>
 <div class="container cart">
   <div class="row">
-    <div class="col col-lg-8 col-sm-12 col-md-6">
+    <div class="col col-lg-12 col-sm-12 col-md-12 pt-5 pb-5">
       <div class="table-responsive">
         <table class="table table-striped table-hover" style="width:100%" border="1">
           <thead>
@@ -95,37 +95,5 @@
     <div class="col col-lg-4 col-sm-12 col-md-12"></div>
   </div>
 </div>
-<br>
-<section class="partners">
-  <div class="container">
-    <h2 class="text-center text-white">Our Partners</h2>
-    <br>
-    <div class="row">
-      <div class="col col-lg-2 col-md-6 col-sm-12">
-        <img src="{{ asset('/images/logo1.png') }}">
-      </div>
-
-      <div class="col col-lg-2 col-md-6 col-sm-12">
-        <img src="{{ asset('/images/logo2.png') }}">
-      </div>
-
-      <div class="col col-lg-2 col-md-6 col-sm-12">
-        <img src="{{ asset('/images/logo3.png') }}">
-      </div>
-
-      <div class="col col-lg-2 col-md-6 col-sm-12">
-        <img src="{{ asset('/images/logo4.png') }}">
-      </div>
-
-      <div class="col col-lg-2 col-md-6 col-sm-12">
-        <img src="{{ asset('/images/logo5.png') }}">
-      </div>
-
-      <div class="col col-lg-2 col-md-6 col-sm-12">
-        <img src="{{ asset('/images/logo6.png') }}">
-      </div>
-    </div>
-  </div>
-</section>
 
 @endsection
