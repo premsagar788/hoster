@@ -11,7 +11,7 @@
   </div>
 </div>
 <section>
-  <div class="container">
+  <div class="container pt-5 pb-5">
     <div class="row">
       <div class="col col-lg-8 col-sm-12 col-md-6">
         <div class="form-holder">
@@ -84,7 +84,7 @@
               @foreach(session('cart') as $product)
                 <p><u>Product:</u> {{ $product['name'] }}</p>
                 <p><u>Quantity:</u> {{ count((array) session('cart')) }}</p>
-                <p><u>Price:</u> {{ $product['price'] }}</p>
+                <p><u>Price:</u> ${{ $product['price'] }}</p>
               @endforeach
             @endif
           </div>
