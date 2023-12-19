@@ -97,9 +97,9 @@
 
           <div class="col-lg-4 col-md-6 col-sm-12">
             <h2>Links</h2>
-              <a href="#" class="nav-link px-2 text-muted">Home</a>
-              <a href="#" class="nav-link px-2 text-muted">Features</a>
-              <a href="#" class="nav-link px-2 text-muted">Pricing</a>
+              <a href="{{ url('/') }}" class="nav-link px-2 text-muted">Home</a>
+              <a href="{{ url('/about') }}" class="nav-link px-2 text-muted">About</a>
+              <a href="{{ url('/pricing') }}" class="nav-link px-2 text-muted">Pricing</a>
           </div>
 
           <div class="col-lg-4 col-md-6 col-sm-12">
