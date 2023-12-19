@@ -225,3 +225,8 @@ section.partners {
 .img-responsive {
   width: 100%;
 }
+
+li.icon-fade:hover
+{
+  color: #0d6efd;
+}
