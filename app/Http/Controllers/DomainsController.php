@@ -10,7 +10,6 @@ class DomainsController extends Controller
     {
         return view('domains');
     }
-    // dns_get_record
 
     public function check(Request $request)
     {
